@@ -6,6 +6,8 @@ import { SubtaskModule } from './kanbanData/subtask/subtask.module'; // Módulo 
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -19,5 +21,7 @@ import { join } from 'path';
       playground: true, // Habilitar o GraphQL Playground
     }),
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
