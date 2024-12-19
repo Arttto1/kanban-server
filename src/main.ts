@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Habilitar CORS
   app.enableCors({
-    origin: 'kanban-fieldcontrol.netlify.app',
+    origin: 'https://kanban-fieldcontrol.netlify.app',
     methods: 'GET,POST', 
     allowedHeaders: 'Content-Type, Accept', 
   });
