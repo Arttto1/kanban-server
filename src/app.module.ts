@@ -5,7 +5,6 @@ import { TaskModule } from './kanbanData/task/task.module'; // Módulo de tasks
 import { SubtaskModule } from './kanbanData/subtask/subtask.module'; // Módulo de subtasks
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -17,8 +16,9 @@ import { AppService } from './app.service';
     SubtaskModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // Gerar automaticamente o schema GraphQL
-      playground: true, // Habilitar o GraphQL Playground
+      autoSchemaFile: true,
+      csrfPrevention: true,
+      playground: true,
     }),
   ],
   controllers: [AppController],
