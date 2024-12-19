@@ -6,9 +6,9 @@ async function bootstrap() {
 
   // Habilitar CORS
   app.enableCors({
-    origin: 'http://localhost:4200', // Permitir apenas o frontend do Angular
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos permitidos
-    allowedHeaders: 'Content-Type, Accept', // Cabeçalhos permitidos
+    origin: 'kanban-fieldcontrol.netlify.app',
+    methods: 'GET,POST', 
+    allowedHeaders: 'Content-Type, Accept', 
   });
 
   await app.listen(process.env.PORT, "0.0.0.0");
